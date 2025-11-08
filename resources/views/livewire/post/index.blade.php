@@ -6,6 +6,6 @@
 
         @endforeach
     </ul>
-
+    @dd($user)
     {{ $posts->links() }}
 </div>
