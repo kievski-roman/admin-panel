@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Public\BecomeDriver;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -26,12 +27,13 @@ Route::middleware(['auth'])->group(function () {
         ->middleware(
             when(
                 Features::canManageTwoFactorAuthentication()
-                    && Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword'),
+                && Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword'),
                 ['password.confirm'],
                 [],
             ),
         )
         ->name('two-factor.show');
 
-        Route::get('post',\App\Livewire\Post\Index::class)->name('post.index');
+    Route::get('post', \App\Livewire\Post\Index::class)->name('post.index');
+    Route::get('/become-driver', BecomeDriver::class)->name('become-driver');
 });
