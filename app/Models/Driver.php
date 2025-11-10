@@ -74,6 +74,7 @@ class Driver extends Model
     {
         return $query->onlyTrashed();
     }
+
     protected static function booted(): void
     {
         static::deleted(function (Driver $driver) {

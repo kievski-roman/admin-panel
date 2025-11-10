@@ -17,10 +17,9 @@ class DriversTable
     {
         return $table
             ->columns([
-                TextColumn::make('first_name')
-                    ->searchable(),
-                TextColumn::make('last_name')
-                    ->searchable(),
+                TextColumn::make('full_name')
+                    ->label('Full name')
+                    ->searchable(['first_name', 'last_name']),
                 TextColumn::make('birthday')
                     ->date()
                     ->sortable(),

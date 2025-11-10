@@ -13,7 +13,8 @@ class BusForm
         return $schema
             ->components([
                 TextInput::make('plate')
-                    ->required(),
+                    ->required()
+                    ->unique(),
                 Select::make('brand_id')
                     ->relationship('brand', 'name')
                     ->required(),

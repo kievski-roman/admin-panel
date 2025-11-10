@@ -12,7 +12,8 @@ class BrandForm
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->required(),
+                    ->required()
+                    ->unique(),
             ]);
     }
 }
