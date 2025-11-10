@@ -16,10 +16,12 @@ class BusForm
                     ->required()
                     ->unique(),
                 Select::make('brand_id')
+                    ->label('Bus')
                     ->relationship('brand', 'name')
                     ->required(),
                 Select::make('driver_id')
-                    ->relationship('driver', 'id'),
+                    ->relationship('driver', 'first_name')
+                    ->required(),
             ]);
     }
 }

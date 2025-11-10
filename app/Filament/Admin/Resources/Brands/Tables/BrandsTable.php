@@ -28,9 +28,6 @@ class BrandsTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->filters([
-                TrashedFilter::make(),
-            ])
             ->recordActions([
                 EditAction::make(),
             ])

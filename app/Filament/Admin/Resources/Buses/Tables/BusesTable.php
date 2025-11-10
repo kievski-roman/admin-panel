@@ -18,7 +18,7 @@ class BusesTable
                     ->searchable(),
                 TextColumn::make('brand.name')
                     ->searchable(),
-                TextColumn::make('driver.id')
+                TextColumn::make('driver.first_name')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
